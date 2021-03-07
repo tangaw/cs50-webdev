@@ -1,0 +1,15 @@
+/* sass --watch styles.scss:styles.css */
+ul {
+  font-size: 14px;
+  color: green;
+}
+ul > li {
+  font-weight: bold;
+}
+
+ol {
+  font-size: 18px;
+  color: green;
+}
+
+/*# sourceMappingURL=styles.css.map */

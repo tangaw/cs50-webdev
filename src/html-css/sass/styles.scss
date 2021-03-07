@@ -1,0 +1,18 @@
+/* sass --watch styles.scss:styles.css */
+// Creating a reusable variable
+$color: green;
+
+ul {
+  font-size: 14px;
+  color: $color;
+
+  // Nesting
+  > li {
+    font-weight: bold;
+  }
+}
+
+ol {
+  font-size: 18px;
+  color: $color;
+}
