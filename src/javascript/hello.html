@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script>
+
+      // function hello() {
+      //   const text = document.querySelector('h1');
+      //   if (text.innerHTML === 'Hello!') {
+      //     text.innerHTML = 'Goodbye!';
+      //   } else {
+      //     text.innerHTML = 'Hello!';
+      //   }
+      // }
+      
+      document.addEventListener('DOMContentLoaded', function() {
+
+        document.querySelector('form').onsubmit = function() {
+          const name = document.querySelector('#name').value;
+          alert(`Hello, ${name}!`)
+        };
+
+      });
+
+    </script>
+  </head>
+  <body>
+    <h1>Hello!</h1>
+    <!-- <button onclick="hello()">Click Here</button> -->
+
+    <form action="">
+      <input type="text" autofocus autocomplete="off" id="name" placeholder="Name">
+      <input type="submit">
+    </form>
+    
+    <script src="" async defer></script>
+  </body>
+</html>

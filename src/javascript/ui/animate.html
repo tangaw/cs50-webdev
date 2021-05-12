@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Animate</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @keyframes move {
+      0% {
+        left: 0%;
+      }
+
+      50% {
+        left: 50%;
+      }
+
+      100% {
+        left: 0%;
+      }
+    }
+
+    @keyframes grow {
+      from {
+        font-size: 20px;
+      }
+
+      to {
+        font-size: 100px;
+      }
+    }
+
+    @keyframes hide {
+      0% {
+        opacity: 1;
+        width: 80%;
+        height: 100px;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+
+      75% {
+        opacity: 0;
+        width: 80%;
+        height: 100px;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+
+      100% {
+        width: 0;
+        height: 0;
+        margin-bottom: 0;
+        padding: 0px;
+        line-height: 0;
+      }
+    }
+
+    h1 {
+      position: relative;
+      animation-name: grow, move;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+
+    div {
+      width: 80%;
+      height: 100px;
+      margin-bottom: 10px;
+      background-color: green;
+      margin-left: 40px;
+      padding: 10px;
+      position: relative;
+      animation-name: hide;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-play-state: paused;
+    }
+
+    div>button {
+      position: absolute;
+      top: 40px;
+      right: 5%;
+    }
+  </style>
+
+  <script>
+
+    // Make button control animation
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const h1 = document.querySelector('h1');
+      h1.style.animationPlayState = 'paused';
+
+      document.querySelector('button').onclick = () => {
+        if (h1.style.animationPlayState === 'paused') {
+          h1.style.animationPlayState = 'running';
+        } else {
+          h1.style.animationPlayState = 'paused';
+        }
+      }
+
+      document.addEventListener('click', event => {
+
+        let element = event.target;
+
+        if (element.className === 'hide') {
+          element.parentElement.style.animationPlayState = 'running';
+          element.parentElement.addEventListener('animationend', () => {
+            element.parentElement.remove();
+          })
+        }
+      })
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <button>Click Here!</button>
+  <h1>Welcome!</h1>
+
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+  <div class="post">
+    Post
+    <button class="hide">Hide</button>
+  </div>
+
+
+</body>
+
+</html>
